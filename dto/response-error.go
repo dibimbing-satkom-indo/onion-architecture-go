@@ -20,3 +20,15 @@ func DefaultErrorResponseWithMessage(msg string) ErrorResponse {
 		Data: nil,
 	}
 }
+
+func DefaultErrorInvalidDataWithMessage(msg string) ErrorResponse {
+	return ErrorResponse{
+		ResponseMeta: ResponseMeta{
+			Success:      false,
+			MessageTitle: "Oops, something went wrong.",
+			Message:      "Form Invalid data.",
+			ResponseTime: "",
+		},
+		Data: msg,
+	}
+}
