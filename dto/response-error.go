@@ -6,6 +6,9 @@ type ErrorResponse struct {
 	Errors any `json:"errors,omitempty"`
 }
 
+func DefaultErrorResponse() ErrorResponse {
+	return DefaultErrorResponseWithMessage("")
+}
 func DefaultErrorResponseWithMessage(msg string) ErrorResponse {
 	return ErrorResponse{
 		ResponseMeta: ResponseMeta{
